@@ -24,6 +24,10 @@ RUN  apt-get update && apt-get install -y  --no-install-recommends locales git v
 
 VOLUME /code
 VOLUME /shapenet
+VOLUME /run_data
 
 WORKDIR /code
 USER nvidia
+
+COPY create_datadir.sh /home/nvidia
+RUN /home/nvidia/create_datadir.sh
