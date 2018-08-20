@@ -11,5 +11,5 @@ for DATA_DIR in $DATA_DIRS; do
  if [ ! -d ${DATA_ROOT}/${DATA_DIR} ]; then
    mkdir -p ${DATA_ROOT}/${DATA_DIR}
  fi
- echo "ln -s /code/${DATA_DIR} ./${DATA_ROOT}/${DATA_DIR}"
+ echo "ln -s /code/${DATA_DIR} ${DATA_ROOT}/${DATA_DIR}"
 done
