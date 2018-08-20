@@ -6,4 +6,4 @@ nvidia-docker run -it --rm --cpuset-cpus="0-${USE_CPUS}" \
  -v /bigdata/study/shapenet/v1:/shapenet \
  -v ${PWD}/run_data:/run_data \
  -v ${PWD}/code:/code \
- 3dreconstruct:latest /bin/bash
+ 3dreconstruct:latest /bin/bash -l

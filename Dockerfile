@@ -20,7 +20,7 @@ RUN  apt-get update && apt-get install -y  --no-install-recommends locales git v
   mkdir /code && chown -R nvidia:nvidia /code && \ 
   echo "nvidia ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/nvidia  && \
   echo export PYTHONPATH=$PYTHONPATH:/code > /home/nvidia/.bash_profile && \
-  echo export SHAPENET_CORE_PATH=/shapenet
+  echo export SHAPENET_CORE_PATH=/shapenet >> /home/nvidia/.bash_profile 
 
 VOLUME /code
 VOLUME /shapenet
@@ -29,5 +29,8 @@ VOLUME /run_data
 WORKDIR /code
 USER nvidia
 
-COPY create_datadir.sh /home/nvidia
-RUN /home/nvidia/create_datadir.sh
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+CMD ["/bin/true"]
+
