@@ -24,14 +24,14 @@ RUN  apt-get update && apt-get install -y  --no-install-recommends locales git v
   echo export PYTHONPATH=$PYTHONPATH:/code > /home/nvidia/.bash_profile && \
   echo export SHAPENET_CORE_PATH=/shapenet >> /home/nvidia/.bash_profile
 
-RUN LD_LIBRARY_PATH=/usr/local/cuda/lib64 pip install -r /root/requirements.txt
+RUN apt-get install -y libcudnn7 && LD_LIBRARY_PATH=/usr/local/cuda/lib64 pip install -r /root/requirements.txt
 
 VOLUME /code
 VOLUME /shapenet
 
-ENV LC_ALL=en_CA.UTF-8
-ENV LANG=en_CA.UTF-8
-ENV LANGUAGE=en_CA.UTF-8
+ENV LC_ALL=en_US.UTF-8
+ENV LANG=en_US.UTF-8
+ENV LANGUAGE=en_US.UTF-8
 
 WORKDIR /code
 USER nvidia
