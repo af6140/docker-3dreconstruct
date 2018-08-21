@@ -32,6 +32,7 @@ VOLUME /shapenet
 ENV LC_ALL=en_US.UTF-8
 ENV LANG=en_US.UTF-8
 ENV LANGUAGE=en_US.UTF-8
+ENV CUDA_HOME=/usr/local/cuda
 
 WORKDIR /code
 USER nvidia
