@@ -26,8 +26,7 @@ traits==4.6.0
 traitsui==6.0.0
 vtk==8.1.1
 Werkzeug==0.14.1
-tensorboard==1.10.0
-tensorflow-gpu==1.10.0
+tensorflow-gpu==1.5.0
 h5py==2.8.0
 scipy==1.1.0
 Pillow==5.2.0
