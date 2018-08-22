@@ -2,7 +2,7 @@
 #https://www.tensorflow.org/install/install_sources
 # good version compatibility matrix
 #FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
-FROM tensorflow/tensorflow:1.5.1-gpu
+FROM tensorflow/tensorflow:1.8.0-gpu
 
 ARG HOST_UID
 ARG HOST_GID
@@ -36,10 +36,11 @@ ENV LANGUAGE=en_US.UTF-8
 ENV CUDA_HOME=/usr/local/cuda
 ENV SHAPENET_CORE_PATH=/shapenet
 
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+
 WORKDIR /code
 USER nvidia
 
-COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 CMD ["/bin/true"]

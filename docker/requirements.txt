@@ -2,5 +2,4 @@ progress==1.4
 pyemd==0.5.1
 h5py==2.8.0
 mayavi==4.6.1
-# scipy==1.1.0
-# Pillow==5.2.0
+
