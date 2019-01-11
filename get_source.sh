@@ -26,4 +26,7 @@ if [ ! -d ${CODE_ROOT}/tf_nearest_neighbour ]; then
 fi
 
 
+if [ ! -d ${CODE_ROOT}/tf_toolbox ]; then
+ git clone https://github.com/jackd/tf_toolbox.git ./code/tf_toolbox
+fi
 
